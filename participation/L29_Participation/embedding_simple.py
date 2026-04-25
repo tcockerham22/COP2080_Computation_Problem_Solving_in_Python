@@ -1,0 +1,20 @@
+import os
+from dotenv import load_dotenv
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+load_dotenv()
+embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
+vector = embeddings.embed_query("dog")
+vector1 = embeddings.embed_query("puppy")
+vector2 = embeddings.embed_query("airplane")
+print(f"These are the vectors: {vector}")
+print(len(vector))
+print("-------------------------------------------------------------")
+print("-------------------------------------------------------------")
+print("-------------------------------------------------------------")
+print(f"These are the vectors: {vector1}")
+print(len(vector1))
+print("-------------------------------------------------------------")
+print("-------------------------------------------------------------")
+print("-------------------------------------------------------------")
+print(f"These are the vectors: {vector2}")
+print(len(vector2))
